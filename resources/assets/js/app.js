@@ -8,6 +8,17 @@ Vue.use(Buefy);
 
 //Vue.component('example', require('./components/Example.vue'));
 
-// const app = new Vue({
-//     el: '#app'
-// });
+var app = new Vue({
+    el: '#app',
+    data(){
+      return {
+
+      }
+    }
+});
+
+$(document).ready(function(){
+  $('div.dropdown').hover(function(e){
+    $(this).toggleClass('is-open');
+  });
+});
