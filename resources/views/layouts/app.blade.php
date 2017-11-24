@@ -29,8 +29,8 @@
 
             <div class="navbar-end">
               @if(!Auth::guest())
-                <a href="#" class="navbar-item is-tab">Login</a>
-                <a href="#" class="navbar-item is-tab">Join the Community</a>
+                <a href="{{ route('login') }}" class="navbar-item is-tab">Login</a>
+                <a href="{{ route('register') }}" class="navbar-item is-tab">Join the Community</a>
               @else
                 <div class="dropdown navbar-item is-tab is-right">
                   Hi Jun &nbsp;<span class="icon"><i class="fa fa-caret-down"></i></span>
@@ -39,7 +39,7 @@
                     <li><a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-bell"></i></span>Notifications</a></li>
                     <li><a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-cog"></i></span>Settings</a></li>
                     <li class="seperator"></li>
-                    <li><a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-sign-out"></i></span>Logout</a></li>
+                    <li><a href="{{ route('logout')}}"><span class="icon"><i class="fa fa-fw m-r-10 fa-sign-out"></i></span>Logout</a></li>
                   </ul>
                 </div>
               @endif
