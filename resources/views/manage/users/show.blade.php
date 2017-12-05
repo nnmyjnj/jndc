@@ -21,17 +21,24 @@
         <label for="name" class="label">Name</label>
         <pre>{{$user->name}}</pre>
       </div>
-    </div>
-  </div>
 
-  <div class="columns">
-    <div class="column">
       <div class="field">
         <label for="email" class="label">Email</label>
         <pre>{{$user->email}}</pre>
       </div>
+
+      <div class="field">
+        <label for="roles" class="label">Roles</label>
+        {{ $user->roles->count() == 0 ? 'This user has not been assigned any roles yet' : '' }}
+        <ul>
+          @foreach($user->roles as $role)
+            <li>{{ $role->display_name }} ({{ $role->description }})</li>
+          @endforeach
+        </ul>
+      </div>
     </div>
   </div>
+
 
 </div><!-- end of flex-container -->
 
