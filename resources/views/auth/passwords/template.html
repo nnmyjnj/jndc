@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Vue 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="tabs">
+        <ul>
+            <li><a href="index.html" class="button is-small">Back</a></li>
+        </ul>
+    </div>
+
+    <section class="section">
+        <div class="container">
+           <h1 class="title"></h1>
+            <div id="app">
+
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello World'
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1037,20 +1037,20 @@ __webpack_require__(12);
 
 window.Vue = __webpack_require__(35);
 
+//import 'buefy/lib/buefy.css'
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
-//Vue.component('example', require('./components/Example.vue'));
+// Vue.component('example', require('./components/Example.vue'));
 
-var app = new Vue({
-  el: '#app',
-  data: function data() {
-    return {};
-  }
-});
+// var app = new Vue({
+//   el: '#app',
+//   data: {}
+// });
 
 $(document).ready(function () {
-  $('div.dropdown').hover(function (e) {
+  //  Dropdowns
+  $('.dropdown').hover(function (e) {
     $(this).toggleClass('is-open');
   });
 });

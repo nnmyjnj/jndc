@@ -31,8 +31,15 @@
             @endif
           </div>
 
+          <div class="field">
+          <label class="checkbox">
+            <input type="checkbox"  {{ old('remember') ? 'checked' : '' }} name="remenber" class="m-t-20">
+            Remenber Me
+          </label>
+          {{--
           <b-checkbox class="m-t-20" name="remember" {{ old('remember') ? 'checked' : '' }}>Remenber Me</b-checkbox>
-
+          --}}
+        </div>
           <button class="button is-primary is-outlined is-fullwidth m-t-30">Log In</button>
         </form>
       </div>{{-- end of card content --}}

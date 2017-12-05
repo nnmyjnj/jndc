@@ -8,16 +8,24 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'JNDC') }}</title>
+    <title>{{ config('app.name', 'JNDC: Management') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
 <body>
+
     @include('_includes.nav.main')
-    <div id="app">
-        @yield('content')
+    <div class="columns">
+      <div class="column">
+        @include('_includes.nav.manage')
+      </div>
+      <div class="column">
+        <div class="management-area" id="app">
+            @yield('content')
+        </div>
+      </div>
     </div>
 
     <!-- Scripts -->

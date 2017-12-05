@@ -2,23 +2,20 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 import Buefy from 'buefy';
+//import 'buefy/lib/buefy.css'
 
 Vue.use(Buefy);
 
+// Vue.component('example', require('./components/Example.vue'));
 
-//Vue.component('example', require('./components/Example.vue'));
+// var app = new Vue({
+//   el: '#app',
+//   data: {}
+// });
 
-var app = new Vue({
-    el: '#app',
-    data(){
-      return {
-
-      }
-    }
-});
-
-$(document).ready(function(){
-  $('div.dropdown').hover(function(e){
+$(document).ready(function() {
+  //  Dropdowns
+  $('.dropdown').hover(function(e) {
     $(this).toggleClass('is-open');
-  });
-});
+  })
+})
