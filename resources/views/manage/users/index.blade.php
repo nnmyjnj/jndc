@@ -16,7 +16,7 @@
 
   <div class="card">
       <div class="card-content">
-        <table class="table is-fullwidth is-narrow is-hoverable">
+        <table class="table is-narrow is-hoverable">
           <thead>
             <tr>
               <th>id</th>
