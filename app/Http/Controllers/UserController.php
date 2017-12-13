@@ -26,7 +26,8 @@ class UserController extends Controller
      */
     public function create(Request $request)
     {
-      return view('manage.users.create');
+      $roles = Role::all();
+      return view('manage.users.create', compact('roles'));
     }
 
     /**
@@ -60,14 +61,20 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($password);
+        $user->save();
 
-        if($user->save()){
-          return redirect()->route('users.show', $user->id);
-        } else {
-          Session::flash('danger', 'Sorry a problem occurred while creating this user.');
-          //$request->session()->flash('danger', 'Sorry a problem occurred while creating this user.');
-          return redirect()->route('users.create');
+        if ($request->roles) {
+          $user->syncRoles(explode(',', $request->roles));
         }
+
+        return redirect()->route('users.show', $user->id);
+        // if($user->save()){
+        //   return redirect()->route('users.show', $user->id);
+        // } else {
+        //   Session::flash('danger', 'Sorry a problem occurred while creating this user.');
+        //   //$request->session()->flash('danger', 'Sorry a problem occurred while creating this user.');
+        //   return redirect()->route('users.create');
+        // }
     }
 
     /**
